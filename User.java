@@ -5,17 +5,19 @@ public abstract class User{
 	private String name;
 	private String contactInfo;
 
+	private static int totalUsers;
 
-	User(){
-		this.userId = Integer.toString(User.generateUniqueId()); 
+	protected User(){
+		this.userId = "User_".concat(Integer.toString(User.generateUniqueId()));
+		totalUsers++;
 	}
 
-	User(String name, String contactInfo){
+	protected User(String name, String contactInfo){
 		this.name = name;
 		this.contactInfo = contactInfo;
 	}
 
-	User(User anotherUser){
+	protected User(User anotherUser){
 		this.userId = Integer.toString(User.generateUniqueId()); 
 		this.name = anotherUser.name;
 		this.contactInfo = anotherUser.contactInfo;
@@ -23,6 +25,10 @@ public abstract class User{
 
 	public final static int generateUniqueId(){
 		return 0;
+	}
+
+	public static int getTotalUsers(){
+		return User.totalUsers;
 	}
 
 	public String getUserId(){
@@ -49,4 +55,3 @@ public abstract class User{
 	public abstract boolean canBorrowBooks()
 
 }
-
