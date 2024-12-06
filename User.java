@@ -13,6 +13,7 @@ public abstract class User{
 	}
 
 	protected User(String name, String contactInfo){
+		this();
 		this.name = name;
 		this.contactInfo = contactInfo;
 	}
@@ -52,6 +53,6 @@ public abstract class User{
 	}
 
 	public abstract void displayDashboard();
-	public abstract boolean canBorrowBooks()
+	public abstract boolean canBorrowBooks();
 
 }
