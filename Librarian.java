@@ -5,6 +5,10 @@ public class Librarian extends User{
 	private String employeeNumber;
 	public static final int MAX_BORROW_LIMIT = 5;
 
+	public Librarian(String employeeNumber){
+		super();
+		this.employeeNumnber = employeeNumnber;
+	}
 	public Librarian(String employeeNumnber, String name, String contactInfo){
 		super(name, contactInfo);
 		this.employeeNumnber = employeeNumnber;
@@ -15,21 +19,20 @@ public class Librarian extends User{
 	}
 
 	public void displayDashboard(){
-		System.out.println(borrowedBooksCount);
+		System.out.println("Librarian Dashboard :	");
+		System.out.println("Employee Number : "+this.employeeNumber);
 	}
 	
 	public boolean canBorrowBooks(){
-		if(borrowedBooksCount<MAX_BORROW_LIMIT){
-			borrowedBooksCount++;
-		}
-		return borrowedBooksCount<=MAX_BORROW_LIMIT;
+
+		return true;
 	}
 
-	void addNewBook(Book book){
+	public void addNewBook(Book book){
 		//implmentation is done later.
 	}
 	
-	void removeBook(Book book){
+	public void removeBook(Book book){
 		//Implementation is done later.
 	}
 	
