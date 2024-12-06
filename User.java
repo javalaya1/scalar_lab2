@@ -1,3 +1,5 @@
+package LibraryManagementeSystem;
+
 public abstract class User{
 	private String userId;
 	private String name;
@@ -14,6 +16,7 @@ public abstract class User{
 	}
 
 	User(User anotherUser){
+		this.userId = Integer.toString(User.generateUniqueId()); 
 		this.name = anotherUser.name;
 		this.contactInfo = anotherUser.contactInfo;
 	}
@@ -30,11 +33,20 @@ public abstract class User{
 		return this.name;
 	}
 
+	public void setName(String name){
+		this.name=name;
+	}
+
 	public String getcontactInfo(){
 		return this.contactInfo;
+	}
+
+	public void setcontactInfo(String contactInfo){
+		this.contactInfo=contactInfo;
 	}
 
 	public abstract void displayDashboard();
 	public abstract boolean canBorrowBooks()
 
 }
+
